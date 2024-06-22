@@ -1,0 +1,191 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+body, html {
+  background-color: #455A64;
+}
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: #455A64;
+}
+
+.App {
+  position: relative;
+  background-color: #455A64;
+  z-index: 1;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.raindrops-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.raindrop-container {
+  position: absolute;
+}
+
+.raindrop-icon {
+  color: #89cff0;
+  font-size: 3.5rem;
+  border: 4px solid #89cff0;
+  padding: 10px;
+  border-radius: 50%;
+  transition: color 0.3s ease-in-out;
+}
+
+.raindrop-icon:hover {
+  color: #1D267D;
+}
+
+.raindrop-icon:hover:after {
+  content: attr(data-tip);
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: hsl(0, 0%, 20%);
+  color: white;
+  padding: 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  opacity: 0.9;
+  white-space: nowrap;
+  z-index: 1;
+  display: none;
+}
+
+.raindrop-icon:hover:before {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #333 transparent transparent transparent;
+  display: none;
+  color: white;
+}
+
+.raindrop-icon:hover:after,
+.raindrop-icon:hover:before {
+  display: block;
+}
+
+.RaindropsObj-1 {
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.RaindropsObj-2 {
+  position: absolute;
+  top: 50%;
+  left: 67%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.OtherObjs {
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ThreeDObj {
+  position: relative;
+  z-index: 1;
+}
+
+.Raindrop {
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 50%;
+  margin: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.our-story {
+  padding: 20px;
+  background-color: #333;
+  color: #fff;
+  margin-top: 50px;
+}
+
+.our-story h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.our-story p {
+  font-size: 1.2em;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.our-story p.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
